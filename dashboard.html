@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="author" content="" />
+        <meta name="description" content="" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Document title -->
+        <title></title>
+        <!-- Stylesheets & Fonts -->
+        <link href="css/plugins.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <style type="text/css">
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 9;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            /*border-right: 1px solid #f2f2f2;*/
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 0px;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+        .menu-side {
+            list-style: none;
+        }
+
+        .menu-side li {
+            padding: 18px 0px;
+            border-top: 1px solid #f2f2f2;
+        }
+        .menu-side li a {
+            color: #434954;
+            font-size: 14.5px;
+            font-weight: 600;
+        }
+        .menu-side li img {
+            margin-right: 5px;
+            margin-top: -8px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 25%;
+            left: 0;
+            z-index: 1050;
+            display: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            outline: 0;
+        }
+
+        .client-logos .polo-carousel-item {
+            padding: 0px;
+            padding-top: 20px;
+        }
+        .s-travel{
+            padding-left: 50px !important;
+        }
+    </style>
+    <!-- 434954 -->
+    <body>
+        <!-- Body Inner -->
+        <div class="body-inner">
+            <div id="mySidenav" class="sidenav">
+                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                <div>
+                    <div class="text-light" style="padding-left: 5px; background: url('img/pattern1.png'); background-size: cover;">
+                        <div style="padding: 10px 10px;">
+                            <img src="img/pro2.jpeg" width="60px" style="margin-top: 10px; border-radius: 100px;" />
+                            <h4 class="p-t-5">Dr.Vimal</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="p-l-10">
+                            <ul class="menu-side">
+                                <li class="dropdown-menu"><img src="img/down-right.png" width="20px" /> <a href="#"> Patient Details</a></li>
+                                    <ul class="menu-dropdown" style="list-style: none; margin-top: 5px;">
+                                            <li style="line-height: 1.4;">
+                                                <label>Patient Name</label><br>
+                                                <input type="text" class="from-control" placeholder="Patient Name" value="Mr Gupta">
+                                            </li>
+                                            <li style="line-height: 1.4;">
+                                                <label>Email</label><br>
+                                                <input type="text" class="from-control" placeholder="Email" value="gupta@gmail.com">
+                                            </li>
+                                            <li style="line-height: 1.4;">
+                                                <label>Mobile</label><br>
+                                                <input type="text" class="from-control" placeholder="Mobile" value="987654321"></li>
+                                            <li style="line-height: 1.4;">
+                                                <label>Relationship With Patient</label>
+                                                <input type="text" class="from-control" placeholder="Relationship with Patient :" value="Brother">
+                                            </li>
+                                    </ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <center>
+                        <button onclick="closeNav()" class="btn" style="background: url('img/pattern1.png'); background-size: cover; border-radius: 5px; padding: 10px; width: 90px; border: none; float: right; margin-right: 10px;">
+                            Save
+                        </button>
+                    </center>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row text-light" style="background: url('img/pattern1.png'); background-size: cover; height: 60px;">
+                    <div class="col-lg-1 col-2" style="margin-top: 20px;">
+                        <div style="font-size: 24px; cursor: pointer;" onclick="openNav()">&#9776;</div>
+                    </div>
+                    <div class="col-lg-4 col-2" style="margin-top: 12px;">
+                        <h2 style="margin-left: -28px;"><b>Prescription</b></h2>
+                    </div>
+                    <div class="col-lg-7 col-8" style="margin-top: 18px;">
+                        <div>
+                            <img src="img/share (1).png" data-target="#modal-2" data-toggle="modal" width="26px" style="float: right;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal-2" tabindex="-1" role="modal" aria-labelledby="modal-label-2" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="m-b-0">Patients Details</h2>
+                                    <div>
+                                        <ul style="list-style: none; margin-top: 5px;">
+                                            <li style="line-height: 1.4;"><b>Name :</b>Mr Gupta</li>
+                                            <li style="line-height: 1.4;"><b>Email : </b>gupta@gmail.com</li>
+                                            <li style="line-height: 1.4;"><b>Mobile :</b> 987654321</li>
+                                            <li style="line-height: 1.4;"><b>Share Prescription with :</b> Brother</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="float-left">
+                                <button onclick="closeNav()" class="btn" data-dismiss="modal" style="background: url('img/pattern1.png'); background-size: cover; border-radius: 5px; padding: 10px; width: 120px; border: none; float: right; margin-right: 10px;">
+                            Send Details 
+                        </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="modal fade" id="modal-3" tabindex="-1" role="modal" aria-labelledby="modal-label-2" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="m-t-10">
+                                        <ul class="menu-side">
+                                            <li style="list-style: none; border: none;"><img src="img/2location.png" width="25px" style="margin-top: -10px;" /> <span style="font-size: 18px;">Share live location</span></li>
+                                            <li class="m-0 p-b-0" style="list-style: none;"><img src="img/2location.png" width="25px" style="margin-top: -10px;" /> <span style="font-size: 18px;">Send your current location</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  <div class="modal-footer">
+                        <div class="float-left">
+                            <a data-dismiss="modal"> SHARE LOACTION</a>
+                        </div>
+                    </div> -->
+                    </div>
+                </div>
+            <!-- </div> -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    
+
+                    <div style="position: relative; left: 0; width: 100%;">
+                        <div class="card">
+                            <div class="row" >
+                                <p style="padding:20px">Write Prescription :<br><input type="text" class="from-control" style="width:350px;height:200px" placeholder="Name:Mr.Gupta  Age:29 years  Report on : Health Check up"></p>
+                                
+                            </div>
+                            
+                        </div>
+
+
+                    <div class="p-t-10 p-b-0 p-l-10" style="width: 100%; display: flex !important; background: #f2f2f2;">
+                        <div>
+                            <img src="img/pro1.jpeg" style="width: 60px; border-radius: 100px; height: 60px;" />
+                        </div>
+                        <div style="padding-left: 8px; padding-top: 5px;">
+                            <ul style="list-style: none;">
+                                <li style="line-height: 1.3;font-size:20px"><b>Patient Details</b></li>
+                                <li style="line-height: 1.3;"><b>Mr Gupta</b></li>
+                                <li style="line-height: 1.3;"><b>29 years</b></li>
+                                <li style="line-height: 1.3;"><b>Health Check Up</b></li>
+                            </ul>
+                        </div>
+                        <!-- <div style="width: 60%;">
+                            <img src="img/send.png" data-target="#modal-3" data-toggle="modal" width="25px" style="float: right; margin-top: 20px;" />
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <section id="page-content" class="p-t-10 p-b-30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="content col-lg-12">
+                            <!--Image Carousel -->
+                            <h4 class="text">Patient Details</h4>
+                            <div class="carousel client-logos dots-grey" data-items-xs="2.4" data-arrows="false" data-dots="false" style="margin-left: -10px; margin-top: -20px;">
+                                <div>
+                                    <a href="#">
+                                        <div class="card text-dark" style="padding-left: 5px; padding-top: 8px;">
+                                            <img src="img/pro3.jpeg" style="width: 65px !important; border-radius: 100px; height: 65px;" />
+                                            <div>
+                                                <ul style="list-style: none; margin-top: 5px;">
+                                                    <li style="line-height: 1.4;"><b>Name :</b> Neha</li>
+                                                    <li style="line-height: 1.4;"><b>Email : </b>neha@gmail</li>
+                                                    <li style="line-height: 1.4;"><b>Mobile :</b> 987654321</li>
+                                                    <li style="line-height: 1.4;"><b>Share Prescription with:</b> Friend</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div class="card text-dark" style="padding-left: 5px; padding-top: 8px;">
+                                            <img src="img/pro1.jpeg" style="width: 65px !important; border-radius: 100px; height: 65px;" />
+                                            <div>
+                                                <ul style="list-style: none; margin-top: 5px;">
+                                                    <li style="line-height: 1.4;"><b>Name :</b>John</li>
+                                                    <li style="line-height: 1.4;"><b>Email : </b>john@gmail.com</li>
+                                                    <li style="line-height: 1.4;"><b>Mobile :</b> 987654321</li>
+                                                    <li style="line-height: 1.4;"><b>Share Prescription with :</b> Brother</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div class="card text-dark" style="padding-left: 5px; padding-top: 8px;">
+                                            <img src="img/images.jpeg" style="width: 65px !important; border-radius: 100px; height: 65px;" />
+                                            <div>
+                                                <ul style="list-style: none; margin-top: 5px;">
+                                                    <li style="line-height: 1.4;"><b>Name :</b> Vikram </li>
+                                                    <li style="line-height: 1.4;"><b>Email : </b>vikram@gmail</li>
+                                                    <li style="line-height: 1.4;"><b>Mobile :</b> 987654321</li>
+                                                    <li style="line-height: 1.4;"><b>Share Prescription with :</b> Father</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- end: Body Inner -->
+        <!-- Scroll top -->
+        <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+        <!--Plugins-->
+        <script src="js/jquery.js"></script>
+        <script src="js/plugins.js"></script>
+        <!--Template functions-->
+        <script src="js/functions.js"></script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+        <script>
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+            function showPosition(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: latitude, lng: longitude },
+                    zoom: 15,
+                });
+                const marker = new google.maps.Marker({
+                    position: { lat: latitude, lng: longitude },
+                    map: map,
+                });
+            }
+        </script>
+        <script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyAd9OfhZwoGb8um6dlmdcE9-G0esWyN06g&libraries=geometry"></script>
+    </body>
+</html>

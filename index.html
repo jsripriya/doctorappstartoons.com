@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/new_style.css" />
+<link rel="stylesheet" type="text/css" href="css/esdy.css" />
+<link type="text/css" rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+  margin:0;
+  padding:0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Verdana';
+  background-color: #282e35;
+}
+.login_bg{
+  width:100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color:#f2f2f2 !important;
+  color:white;
+  margin:0;
+  padding:0;
+}
+
+
+.login_area{
+  width:90%;
+  border:1px solid white;
+  position: absolute;
+  top:25%;
+  left: 5%;
+  padding:10px;
+  background-color: white;
+  color:black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #d3d3d3
+}
+
+.login_pic{
+  width:100px;
+  height: 100px;
+  border-radius: 50%;
+  border:1px solid white;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top:-18%;
+  background-color: #38414d;
+  /*padding:10px;*/
+}
+
+.login_pic img{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.login_button{
+  width:40%;
+  height: 35px;
+  background-color: #df0000;
+  border:none;
+  border-radius: 30px;
+  color:white;
+  outline: none
+}
+
+.language_selector{
+  font-size:12px;
+}
+
+
+
+
+
+
+.login_bg{
+  background-color:#f2f2f2 !important;
+}
+.login_button{
+  background: linear-gradient(95.84deg, #b83437 0%, rgb(225 185 155) 100%) !important;
+}
+.login_pic{
+  border: 2px solid ;
+  border-color:#d4d5d6;
+}
+
+.form-control{
+}
+body{
+  background: #f8f8f8
+}
+
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  color:inherit;
+  text-decoration: none;
+}
+
+a:active{
+  color:inherit;
+  text-decoration: none;
+}
+
+
+.top_bar{
+  width: 100%;
+  height: 70px;
+  background: #0099ff;
+}
+
+.top_bar_internal{
+  width: 100%;
+  height: 45px;
+  background: #0099ff;
+}
+
+.top_bg{
+  width: 100%;
+  height: 85px;
+  background: url(../img/wave.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top_user_bar{
+  width:100%;
+  height: 100px;
+}
+
+.top_user_bar ul{
+  margin:0;
+  padding:0;
+  list-style-type: none;
+  overflow-x: scroll;
+}
+
+.top_user_bar ul li{
+  display: inline;
+}
+
+.top_user_bar ul li a{
+  color:black;
+  text-decoration: none;
+}
+
+.top_user_bar ul li a:hover{
+  color:black;
+  text-decoration: none;
+}
+.top_user_bar ul li img{
+  width:30px;
+  height: 30px;
+}
+
+.top-user-circle{
+  width:110px;
+  height: 110px;
+  border-radius: 50%;
+  border:2px solid white;
+  position: absolute;
+  top:50px;
+  left: 50%;
+  margin-left: -55px;
+  background: #3A98C7;
+}
+
+.top-user-circle img{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-name{
+  font-size:18px;
+  margin-top:8px;
+}
+
+.quick_box{
+  width:auto;
+  height: auto;
+  padding:10px;
+  float: left;
+  margin-top:10px;
+  margin-left: 10px;
+  background: white;
+  border-radius:5px;
+  box-shadow: 0px 0px 3px #d3d3d3;
+  font-size:12px;
+  min-width: 30%;
+}
+
+.quick_box img{
+  width:30px;
+  height: 30px;
+}
+
+.quick_box a{
+  color:black;
+  text-decoration: none;
+}
+
+.quick_box p{
+  margin:0;
+  margin-top:5px;
+}
+
+.route_plan{
+  clear: both;
+  margin-top:10px;
+  padding-top:10px;
+}
+
+.filter{
+  width:20px;
+  height: 20px;
+}
+
+.route_plan_holder{
+  background: white;
+  padding:5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #d3d3d3;
+  margin-top:10px;
+}
+
+.route_plan_holder_alt{
+  background: white;
+  padding:5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #d3d3d3;
+  margin-top:10px;
+  padding:20px 0px;
+}
+
+
+.route_plan_holder_alt_mini{
+  background: white;
+  padding:5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #d3d3d3;
+  margin-top:10px;
+  padding:10px 10px;
+}
+
+.route_plan_title{
+  font-size:12px;
+  font-weight: bolder;
+  margin:0;
+  padding:0;
+}
+
+.route_plan_title_alt{
+  font-weight: bolder;
+}
+
+.route_plan_address{
+  font-size:11px;
+}
+
+.start_merchandising{
+  margin-top:10px;
+  border:none;
+  border-radius: 30px;
+  padding:.2em 1em;
+  background: #0099ff;
+  color:white;
+}
+
+.start_merchandising_alt{
+  border:none;
+  border-radius: 30px;
+  padding:.2em 1em;
+  background: #0099ff;
+  color:white;
+}
+
+.route_plan_time{
+  font-size:11px;
+  margin-top:5px;
+  text-align: center;
+}
+
+.company-logo{
+  font-size:22px;
+  color:white;
+  margin-top:8px;
+}
+
+.menu-btn{
+  margin-top:4px;
+}
+
+.menu_box{
+  width:100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top:0;
+  left: 0;
+  display: none
+}
+
+.left-menu{
+  width:70vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top:0;
+  background: white;
+}
+
+.right-menu{
+  width:30vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top:0;
+  background: none
+  /*padding:10px;*/
+}
+
+.close-btn{
+  width:15px;
+  height: 15px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close-btn img{
+  width:100%;
+  height: 100%;
+}
+
+.side-menu{
+  margin:0;
+  padding:0;
+  list-style-type: none;
+}
+
+.side_menu_top{
+  width:100%;
+  height: 60px;
+  background-color: #0099ff;
+  padding:10px;
+}
+
+.menu-user-circle{
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  border:1px solid white;
+  display: inline-block;
+  background: #3A98C7;
+}
+
+.menu-user-circle img{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.menu-user-info{
+  width:80%;
+  height: 40px;
+  margin-top: -40px !important;
+  margin-left: 50px;
+  color:white;
+}
+
+.menu-user-info p{
+  margin:0;
+}
+
+.side-menu li{
+  border-bottom: 1px solid #f8f8f8;
+  padding:10px 10px;
+}
+
+.side-menu li a{
+  color:black;
+  display: block;
+  text-decoration: none;
+}
+
+.side-menu li a:hover{
+  color:black;
+  text-decoration: none;
+}
+
+.side-menu li a img{
+  width:10px;
+  height: 10px;
+  margin-top:-3px;
+}
+
+.top{
+  background: #0099ff;
+  color:white;
+}
+
+.working-area{
+  width:100vw;
+  height: 0;
+  display: none;
+  position: fixed;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  background: white;
+  border-radius: 14px 14px 0px 0px;
+  padding:10px 10px;
+  border-top: 1px solid #d3d3d3;
+  box-shadow: 0px 0px 35px rgba(0,0,0,0.1);
+}
+
+.active-work-area{
+display:block;
+height:90vh;
+transition:1s ease;
+}
+
+.working-area-close{
+  width:25px;
+  height: 25px;
+  color:black;
+  position: absolute;
+  top:15px;
+  right: 10px;
+}
+
+.working-area-close img{
+  width:100%;
+  height: 100%;
+}
+
+.area-title{
+  font-size:22px;
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 8px;
+  margin-bottom:10px;
+}
+
+.auto-bordered-box{
+  width:100%;
+  border:1px solid #d3d3d3;
+  padding:10px;
+  height: auto;
+  text-align: center;
+}
+
+.working-area-button{
+  width:100%;
+  height: 40px;
+  background: green;
+  color:white;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  border:none;
+}
+
+
+.reset-button{
+  border:none;
+  background: none
+}
+
+.toast{
+  width:90vw;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  left: 5vw;
+  padding:8px;
+  border-radius: 5px;
+}
+
+.toast img{
+  width:20px;
+  height: 20px;
+}
+
+.toast-success{
+  background: green;
+  color:white;
+  box-shadow: 0px 0px 3px green
+}
+
+
+.toast-danger{
+  background: red;
+  color:white;
+  box-shadow: 0px 0px 3px red
+}
+
+.check-circles{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: green;
+  float: right;
+  margin-top:-22px;
+  padding-top:0.5px;
+  padding-left:1px;
+}
+
+.check-circles img{
+  width: 95%;
+  height: 95%;
+}
+
+
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #282e35;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.individual_store_circle{
+  width:80px;
+  height: 80px;
+  border-radius: 50%;
+  border:1px solid #f8f8f8;
+  background-color: #0099ff;
+  color:white;
+  padding:15px 10px;
+  font-size:32px;
+}
+
+.scan-qr-button{
+  width:120px;
+  height: 100px;
+  position: fixed;
+  top:50%;
+  left: 50%;
+  margin-top:-60px;
+  margin-left: -50px;
+}
+
+.scan-qr-button img{
+  width:100%;
+  height: 100%
+}
+
+.initial_box_top{
+  width: 90vw;
+  height: 150px;
+  background: white;
+  border-radius: 10px;
+  border:2px dashed #f8f8f8;
+  box-shadow: 0px 0px 3px #d3d3d3;
+  padding:10px;
+  margin:0px auto;
+  margin-top:-20px;
+}
+
+.initial_box_top h3{
+  text-align: center;
+  font-size:72px;
+  color:#f8f8f8;
+  margin:0;
+  padding:0;
+}
+
+.home_theme_data{
+  width:100%;
+  background-color: #0099ff;
+  height: 220px;
+  padding:10px;
+  color:white;
+}
+
+.scrollmenu {
+  background-color: #0c69b0;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.scrollmenu a:hover {
+  background-color: #0a5590;
+}
+
+.scroll-active{
+  background-color: #0a5590;
+}
+
+
+.merch_photo_container{
+  position: relative;
+}
+
+.merch_photo_container img{
+  list-style-type: width:100%;
+  position: relative;
+  left: 0;
+  top:0;
+}
+
+.merch_photo_container p{
+  position: absolute;
+  bottom:0;
+  left: 10px;
+  color:red;
+}
+
+.add_new_unit_button{
+  text-align: center;
+  padding:10px;
+  width:150px;
+  height: 40px;
+  border:none;
+  border-radius: 30px;
+  background: #0099ff;
+  color:white;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 9999;
+  box-shadow: 0px 0px 16px rgba(97, 192, 255,0.5);
+}
+
+.add_new_unit_button:hover{
+  text-decoration: none;
+  color:white !important;
+}
+
+.photo_container{
+  width:100%;
+  height: auto;
+  padding:10px;
+  background: white;
+  border-radius: 10px;
+}
+
+.photo_box{
+  width:auto;
+  display: inline-block;
+  height: auto;
+}
+
+.photo_box img{
+  width:30px;
+  height: 30px;
+}
+
+.photo_box p{
+  width: 100%
+}
+
+.fullScreenModal{
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left: 0;
+  padding:10px;
+  overflow-y: hidden;
+  background: white;
+}
+
+.btn-full{
+  width:100%;
+  background: #0099ff;
+  border:1px solid #0099ff;
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  <div class="inner-body login_bg">
+      <div class="login_area" style="left: 2.5vw;">
+        <center>
+          <p style="font-weight: 600;color:#b83437;font-size:26px">Doctors Loggin</p>
+        </center>
+        <div class="form-grop">
+          <label>User Id <sup>*</sup></label>
+          <input type="text" class="" id="emp_id" name="" placeholder="Enter your user id" style="width:90%;padding:10px !important;margin-top:5px;min-height: 20px !important;">
+        </div>
+        <div class="form-grop">
+           <label>Password <sup>*</sup></label>
+           <input type="password" id="pass" name="" placeholder="**********" style="width:90%;padding:10px !important;margin-top:5px;min-height: 20px !important;">
+        </div>
+        <center>
+          <button id="login_btn" class="login_button" style="margin-top:10px" onclick="window.location.href='dashboard.html'">Login</button>
+        </center>
+        <div id="error_status"></div>
+        <hr>
+        <center>
+          <p><a href="forgot-password.html">Forgot Password?</a> | <a href="">Having trouble signing up?</a></p>
+          <p class="language_selector"><a id="lang_eng" href="">English</a></p>
+        </center>
+      </div>
+  </div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
